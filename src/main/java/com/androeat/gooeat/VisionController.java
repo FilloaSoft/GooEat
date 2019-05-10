@@ -60,7 +60,7 @@ public class VisionController {
 	 * @return a string with the list of labels and percentage of certainty
 	 * @throws CloudVisionTemplate if the Vision API call produces an error
 	 */
-	@PostMapping("/extractLabels")
+	@GetMapping("/extractLabels")
 	public Map<String, Float> extractLabels(String imageUrl) {
 		AnnotateImageResponse response = this.cloudVisionTemplate.analyzeImage(
 				this.resourceLoader.getResource(imageUrl), Type.LABEL_DETECTION);
